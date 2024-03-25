@@ -1,0 +1,84 @@
+body{
+    background-color: #afc8ff;
+    font-family:sans-serif;
+}
+.container{
+    text-align: center;
+    align-items: center;
+}
+h1{
+    margin-bottom: .5rem;
+}
+.buttons{
+    margin-left: 20rem;
+    margin-right: 20rem;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-around;
+}
+#button-borrar{
+    margin-bottom: .5rem;
+}
+#button-width{
+    margin-bottom: 1rem;
+}
+button{
+    width: 8rem;
+    margin-bottom: .5rem;
+    outline: none;
+}
+canvas{
+    background-color: white;
+    outline: rgb(85, 84, 84) 1px solid;
+}
+#red{
+    background-color: #df0909;
+    color: white;
+    font: 16px;
+}
+#blue{
+    background-color: #0f51df;
+    color: white;
+    font: 16px;
+}
+#green{
+    background-color: #129412;
+    color: white;
+    font: 16px;
+}
+#black{
+    background-color: #000000;
+    color: white;
+    font: 16px;
+}
+#pink{
+    background-color: #f16aea;
+    color: white;
+    font: 16px;
+}
+#orange{
+    background-color: #ff8400;
+    color: white;
+    font: 16px;
+}
+#yellow{
+    background-color: #eaea31;
+    color: white;
+    font: 16px;
+}
+#purple{
+    background-color: #8d019a;
+    color: white;
+    font: 16px;
+}
+#borrador{
+    background-color: #525252;
+    color: white;
+    font: 16px;
+}
+#width{
+    margin: .5rem;
+    background-color: #939393;
+    font: 16px;
+}

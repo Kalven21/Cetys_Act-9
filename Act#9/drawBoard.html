@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" href="edit.css"></link>
+    <script src="utils.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Paint</h1>
+        <h3>Dibuja lo que tu imaginacion tenga</h3>
+        <div class="buttons">
+            <button id="red" type="button" value="#df0909">Red</button>
+            <button id="pink" type="button" value="#f16aea">Pink</button>
+            <button id="green" type="button" value="#129412">Green</button>
+            <button id="yellow" type="button" value="#eaea31">Yellow</button>
+            <button id="purple" type="button" value="#8d019a">Purple</button>
+            <button id="orange" type="button" value="#ff8400">Orange</button>
+            <button id="blue" type="button" value="#0f51df">Blue</button>
+            <button id="black" type="button" value="#000000">Black</button>
+        </div>
+        <div id="button-borrar">
+            <button id="borrador" type="button">Eraser</button>
+        </div>
+        <div id="button-width">
+            <button id="width" type="button" value="1">1</button>
+            <button id="width" type="button" value="2">2</button>
+            <button id="width" type="button" value="5">5</button>
+            <button id="width" type="button" value="8">8</button>
+            <button id="width" type="button" value="10">10</button>
+        </div>
+        <canvas id="canvas" width="1100" height="600"></canvas>
+        <script>
+            window.onload = function () {
+            var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+            mouse = utils.captureMouse(canvas);
+    
+        //para dibujar
+        canvas.addEventListener('mousedown', function () {
+        context.beginPath();
+        context.moveTo(mouse.x, mouse.y);
+        canvas.addEventListener('mousemove', onMouseMove, false);
+        }, false);
+        canvas.addEventListener('mouseup', function () {
+        canvas.removeEventListener('mousemove', onMouseMove, false);
+        }, false);
+        function onMouseMove () {
+        context.lineTo(mouse.x, mouse.y);
+        context.stroke();
+        }
+        //para cambiar de color
+        var colores = document.getElementsByClassName('buttons')[0];
+        colores.addEventListener('click',function(event){
+        context.strokeStyle = event.target.value;
+        });
+        //para borrar
+        var clearButton = document.getElementById('borrador');
+        clearButton.addEventListener('click',function(){
+        context.clearRect(0,0,canvas.width,canvas.height);
+        });
+        //para cambiar width
+        var width = document.getElementById('button-width');
+        width.addEventListener('click',function(event){
+        context.lineWidth = event.target.value;
+        });
+    }
+        </script>
+    </div>
+</body>
+</html>
